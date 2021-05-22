@@ -1,0 +1,47 @@
+<form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)">
+
+    <h2>Crea un nuevo post</h2>
+
+    <div class="mb-3">
+
+        <label class="form-label">Titulo</label>
+        <input class="form-control" type="text" name="titulo" formControlName="titulo">
+
+        <p class="error" *ngIf="formulario.get('titulo').hasError('required') && formulario.get('titulo').touched">El
+            Titulo es
+            obligatorio</p>
+
+
+
+
+
+        <label class="form-label">Texto</label>
+        <input class="form-control" type="text" name="texto" formControlName="texto">
+
+        <p class="error" *ngIf="formulario.get('texto').hasError('required') && formulario.get('texto').touched">El
+            texto es
+            obligatorio</p>
+
+        <label class="form-label">Autor</label>
+        <input class="form-control" type="text" name="autor" formControlName="autor">
+
+        <label class="form-label">Imagen</label>
+        <input class="form-control" type="text" name="imagen" formControlName="imagen">
+
+        <label class="form-label">Fecha</label>
+        <input class="form-control" type="date" name="fecha" formControlName="fecha">
+
+        <select formControlName="categoria">
+            <option value="todos">Selecciona una categoría</option>
+            <option value="cuidados">Cuidados</option>
+            <option value="cactus">Cactus</option>
+            <option value="hoja">Hoja</option>
+            <option value="flor">Flor</option>
+        </select>
+
+        <button class="btn btn-info" [disabled]="!formulario.valid">Enviar</button>
+
+
+    </div>
+
+</form>

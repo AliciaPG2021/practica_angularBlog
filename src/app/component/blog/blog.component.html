@@ -1,0 +1,35 @@
+<div class="categoria">
+
+    <select (change)="onChange($event)">
+        <option value="todos">Selecciona una categoría</option>
+        <option value="cuidados">Cuidados</option>
+        <option value="cactus">Cactus</option>
+        <option value="hoja">Hoja</option>
+        <option value="flor">Flor</option>
+    </select>
+</div>
+
+
+
+<div class="posts" class="container">
+    <div class="post" *ngFor="let post of Posts" class="row">
+
+        <div class="col-12">
+            <h4>{{post.titulo}}</h4>
+        </div>
+
+        <div class="col-6">
+            <img [src]="post.imagen">
+            <p>Fecha: {{post.fecha}}</p>
+
+        </div>
+
+        <div class="col-6">
+            <p class="texto">{{post.texto}}</p>
+            <p class="autor"> Autor/a: {{post.autor}}</p>
+
+        </div>
+
+    </div>
+
+</div>
