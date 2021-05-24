@@ -10,11 +10,17 @@ import { ServicioBlogService } from 'src/app/servicio-blog.service';
 export class BlogComponent implements OnInit {
 
   Posts: Post[];
+  categorias: string[];
 
-  constructor(private servicioBlogService: ServicioBlogService) { }
+
+  constructor(private servicioBlogService: ServicioBlogService) {
+    this.categorias = [];
+  }
 
   ngOnInit(): void {
     this.Posts = this.servicioBlogService.getAllPosts();
+    this.categorias = this.servicioBlogService.getAllCategorias();
+
   }
 
 

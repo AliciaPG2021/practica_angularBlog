@@ -1,11 +1,10 @@
 <div class="categoria">
 
     <select (change)="onChange($event)">
+
         <option value="todos">Selecciona una categoría</option>
-        <option value="cuidados">Cuidados</option>
-        <option value="cactus">Cactus</option>
-        <option value="hoja">Hoja</option>
-        <option value="flor">Flor</option>
+        <option [value]="categoria" *ngFor="let categoria of categorias">{{categoria}}</option>
+
     </select>
 </div>
 

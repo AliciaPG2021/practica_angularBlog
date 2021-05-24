@@ -8,7 +8,9 @@ export class ServicioBlogService {
 
   private arrPosts: Post[];
 
+
   constructor() {
+
     this.arrPosts = [
       { titulo: 'Cuidado con el sol', texto: 'Neque, tenetur ex facere odit reiciendis dolores iste cupiditate culpa inventore consequatur dolor quaerat, asperiores minus', autor: 'Almudena Pico', imagen: 'https://ichef.bbci.co.uk/news/640/cpsprodpb/8983/production/_109730253_gettyimages-658291850.jpg', fecha: '04/11/2018', categoria: 'cuidados' },
 
@@ -25,8 +27,22 @@ export class ServicioBlogService {
     ]
   }
 
+
+
   getAllPosts() {
     return this.arrPosts;
+  }
+
+  getAllCategorias() {
+    let resultado = [];
+    for (let post of this.arrPosts) {
+      if (!resultado.includes(post.categoria)) {
+        resultado.push(post.categoria);
+      }
+
+    }
+    return resultado;
+
   }
 
   getByCategoria(pCategoria: string): Post[] {

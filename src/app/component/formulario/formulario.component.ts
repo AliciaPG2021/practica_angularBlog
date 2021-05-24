@@ -33,7 +33,7 @@ export class FormularioComponent implements OnInit {
 
 
     if (formValue.autor === null) {
-      formValue.autor = 'Autor desconocido';
+      formValue.autor = 'Autor/a desconocido';
     }
 
 
@@ -45,7 +45,9 @@ export class FormularioComponent implements OnInit {
 
 
     this.servicioBlogService.addNewPost(formValue);
+
     alert('tu post ha sido incluido en el Blog');
+
 
   }
 
